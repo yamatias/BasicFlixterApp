@@ -13,9 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-/**
- * Created by matiash on 6/15/16.
- */
+
 public class MoviesAdapter extends ArrayAdapter<Movie> {
     public MoviesAdapter(Context context, ArrayList<Movie> movies) {
         super(context, R.layout.item_movie,movies);
@@ -39,7 +37,7 @@ public class MoviesAdapter extends ArrayAdapter<Movie> {
 
         Log.d("MoviesAdapter","Position " + position);
 
-        String imageUri = "https://i.imgur.com/tGbaZCY.jpg";
+        String imageUri = "http://image.tmdb.org/t/p/w500"+movie.posterLink;
         Picasso.with(getContext()).load(imageUri).into(ivPoster);
 
 
