@@ -35,11 +35,12 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/tvMovieTitle"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="52dp"
+        android:textSize="26dp"
         android:gravity="center"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:layout_below="@+id/rbRating"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,5 +54,48 @@
         android:gravity="center"
         android:textColor="@color/white"
 
-        />
+        android:padding="10dp"
+        android:textSize="14sp" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rbRating"
+        android:visibility="visible"
+        android:clickable="false"
+        android:indeterminateOnly="false"
+        android:focusable="false"
+        android:isIndicator="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="22dp"
+        android:stepSize=".01" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/movieAPI_label_2"
+        android:id="@+id/tvPopularity"
+        android:textColor="@color/white"
+        android:layout_marginBottom="81dp"
+        android:textStyle="italic"
+        android:textIsSelectable="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/tvRating"
+        android:paddingTop="10dp"
+        android:textColor="@color/white"
+        android:layout_alignTop="@+id/tvPopularity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:textStyle="bold"
+        android:textSize="30sp" />
+
+
 </RelativeLayout>
