@@ -13,9 +13,9 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [ ] For each movie displayed, user can see the following details:
-  * [x] Title, Poster Image, Overview (Portrait mode)
-  * [x] Title, Backdrop Image, Overview (Landscape mode)
+For each movie displayed, user can see the following details:
+* [x] Title, Poster Image, Overview (Portrait mode)
+* [x] Title, Backdrop Image, Overview (Landscape mode)
 * [x] Layout is optimized with the [ViewHolder](http://guides.codepath.com/android/Using-an-ArrayAdapter-with-ListView#improving-performance-with-the-viewholder-pattern) pattern.
 * [x] Display a nice default [placeholder graphic](http://guides.codepath.com/android/Displaying-Images-with-the-Picasso-Library#configuring-picasso) for each image during loading.
 * [x] Allow user to view details of the movie including ratings and popularity within a separate activity or dialog fragment.
@@ -37,12 +37,12 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-If the image does not load, try [this link](http://imgur.com/QO5QHxP)
+If the image does not load, try [this link](http://imgur.com/QO5QHxP).
 
 
 ## Notes
 
-Learning about the Movie API we used took some time to learn about as well as working with JSON Objects in Android. After that most time was spent making the design more appealing and adding more features to the app like Dark Mode.
+Learning about the Movie Database API we used took some time to learn about as well as working with JSON Objects in Android. After that most time was spent making the design more appealing and adding more features to the app like Dark Mode.
 
 ## Open-source libraries used
 
