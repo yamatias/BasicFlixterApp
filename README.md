@@ -27,18 +27,22 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [x] Created a Dark Mode that can be enabled or disabled by touching and holding on the main screen.
+* [x] Added the Movie Poster to the background of the activity when pulling up its information.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/QO5QHxP' title='Flixter Video Walkthrough' width='' alt='Flixter Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
+If the image does not load, try [this link](http://imgur.com/QO5QHxP)
+
+
 ## Notes
 
-Describe any challenges encountered while building the app.
+Learning about the Movie API we used took some time to learn about as well as working with JSON Objects in Android. After that most time was spent making the design more appealing and adding more features to the app like Dark Mode.
 
 ## Open-source libraries used
 
