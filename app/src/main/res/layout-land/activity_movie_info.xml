@@ -35,12 +35,12 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/tvMovieTitle"
-        android:textSize="26dp"
+        android:textSize="20sp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:padding="10dp"
         android:layout_below="@+id/rbRating"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:padding="10sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,15 +48,14 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/tvOverview"
-        android:layout_below="@+id/tvMovieTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
         android:gravity="center"
         android:textColor="@color/white"
         android:maxLines="50"
         android:scrollbars="vertical"
         android:padding="10dp"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -79,11 +78,11 @@
         android:text="@string/movieAPI_label_2"
         android:id="@+id/tvPopularity"
         android:textColor="@color/white"
-        android:layout_marginBottom="81dp"
         android:textStyle="italic"
         android:textIsSelectable="false"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -94,7 +93,7 @@
         android:textColor="@color/white"
         android:layout_alignTop="@+id/tvPopularity"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textSize="30sp" />
 

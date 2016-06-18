@@ -30,6 +30,7 @@ public class MoviesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("debug","onCreate has been called");
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_movies);
 
 
@@ -65,7 +66,8 @@ public class MoviesActivity extends AppCompatActivity {
                         String posterUrl = current_movie_info.getString("poster_path");
                         double rating = current_movie_info.getDouble("vote_average");
                         int popularity = current_movie_info.getInt("popularity");
-                        movies.add(new Movie(title,rating,overview,popularity,posterUrl));
+                        String backdropUrl = current_movie_info.getString("backdrop_path");
+                        movies.add(new Movie(title,rating,overview,popularity,posterUrl,backdropUrl));
                     } catch (JSONException e) {
                         e.printStackTrace();
                         Log.d("debug","did not get movie info. No movies added");
@@ -89,6 +91,7 @@ public class MoviesActivity extends AppCompatActivity {
                         intent.putExtra("movie_poster_link",movies.get(i).posterLink);
                         intent.putExtra("movie_rating",movies.get(i).rating);
                         intent.putExtra("movie_popularity",movies.get(i).popularity);
+                        intent.putExtra("movie_backdrop_link",movies.get(i).backdropLink);
                         startActivity(intent);
                     }
                 });
@@ -96,30 +99,7 @@ public class MoviesActivity extends AppCompatActivity {
                 lvMovies.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                     @Override
                     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        //TODO make the dark mode work
-                        darkmode = !darkmode;
-
-                        if(darkmode) {
-                            lvMovies.setBackgroundResource(R.color.dark);
-//                            TextView title = (TextView)adapter.getView(i,view,adapterView).findViewById(R.id.tvTitle);
-//                            title.setBackgroundColor(0xFFFF00);
-//                            adapter.notifyDataSetChanged();
-//                            lvMovies.setAdapter(adapter);
-                            adapter.setMode("darkmode");
-                            Toast.makeText(MoviesActivity.this,"Darkmode Enabled",Toast.LENGTH_SHORT).show();
-                        }
-                        else {
-                            lvMovies.setBackgroundResource(R.color.white);
-//                            TextView title2 = (TextView)adapter.getView(i,view,adapterView).findViewById(R.id.tvTitle);
-//                            title2.setBackgroundColor(0xFFFFFF);
-//                            adapter.notifyDataSetChanged();
-//                            lvMovies.setAdapter(adapter);
-                            adapter.setMode("l");
-                            Toast.makeText(MoviesActivity.this,"Darkmode Disabled",Toast.LENGTH_SHORT).show();
-
-                        }
-
-
+                        toggleDarkMode(lvMovies,adapter);
                         return true;
                     }
                 });
@@ -132,6 +112,22 @@ public class MoviesActivity extends AppCompatActivity {
                 Log.d("debug","failure - did not get internet connection to pull up movies");
             }
         });
+    }
+
+    public void toggleDarkMode(ListView lv, MoviesAdapter adapter) {
+        darkmode = !darkmode;
+
+        if(darkmode) {
+            lv.setBackgroundResource(R.color.dark);
+            adapter.setMode("darkmode");
+            Toast.makeText(MoviesActivity.this,"Darkmode Enabled",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            lv.setBackgroundResource(R.color.white);
+            adapter.setMode("l");
+            Toast.makeText(MoviesActivity.this,"Darkmode Disabled",Toast.LENGTH_SHORT).show();
+
+        }
     }
 
 

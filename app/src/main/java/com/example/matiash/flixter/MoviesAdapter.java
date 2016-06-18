@@ -1,6 +1,7 @@
 package com.example.matiash.flixter;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,8 +73,19 @@ public class MoviesAdapter extends ArrayAdapter<Movie> {
 
 //        Log.d("MoviesAdapter","Position " + position);
 
-        String imageUri = "http://image.tmdb.org/t/p/w500"+movie.posterLink;
-        Picasso.with(getContext()).load(imageUri).placeholder(R.drawable.imageplaceholder).transform(new RoundedCornersTransformation(10, 10)).into(viewHolder.ivPoster);
+
+        String imageUri = "";
+        //Load correct image depending on the orientation
+        if(convertView.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            imageUri = "http://image.tmdb.org/t/p/w500"+movie.posterLink;
+            Picasso.with(getContext()).load(imageUri).placeholder(R.drawable.imageplaceholder).transform(new RoundedCornersTransformation(10, 10)).into(viewHolder.ivPoster);
+        }
+        else {
+            imageUri = "http://image.tmdb.org/t/p/w500"+movie.backdropLink;
+            Picasso.with(getContext()).load(imageUri).placeholder(R.drawable.imageplaceholderlandscape).transform(new RoundedCornersTransformation(10, 10)).into(viewHolder.ivPoster);
+        }
+
+
 
         viewHolder.tvItemOverview.setText(movie.overview);
         // Return the completed view to render on screen
